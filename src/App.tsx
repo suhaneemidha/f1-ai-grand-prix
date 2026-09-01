@@ -18,6 +18,7 @@ function App() {
         start={level1.start}
         end={level1.end}
         path={bfsResult.path}
+        explored={bfsResult.exploredOrder}
       />
     </main>
   );
