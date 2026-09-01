@@ -1,6 +1,5 @@
 import type { CarState, AlgorithmName } from './types';
-import type { GridPosition, SearchResult } from '../algorithms/types';
-
+import type { Grid, GridPosition, SearchResult } from '../algorithms/types';
 const BASE_SPEED = 2;
 const CELL_SIZE = 32;
 
@@ -44,6 +43,7 @@ export function gridToWorld(
 
 export function stepCar(
   car: CarState,
+  grid: Grid,
   deltaTime: number
 ): void {
   if (car.finished || car.path.length < 2) {
@@ -52,8 +52,15 @@ export function stepCar(
     return;
   }
 
+  const nextCell = car.path[car.pathIndex + 1];
+
+  const terrainCost =
+    grid[nextCell.row][nextCell.col].terrainCost;
+
+  const speed = BASE_SPEED / terrainCost;
+
   car.elapsedTime += deltaTime;
-  car.segmentProgress += BASE_SPEED * deltaTime;
+  car.segmentProgress += speed * deltaTime;
 
   if (car.segmentProgress >= 1) {
     car.segmentProgress = 0;
@@ -70,6 +77,7 @@ export function stepCar(
   }
 
   const from = gridToWorld(car.path[car.pathIndex]);
+
   const to = gridToWorld(
     car.path[car.pathIndex + 1]
   );
