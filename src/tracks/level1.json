@@ -1,0 +1,90 @@
+{
+  "start": { "row": 1, "col": 1 },
+  "end": { "row": 5, "col": 8 },
+  "grid": [
+    [
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 }
+    ],
+    [
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 }
+    ],
+    [
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 }
+    ],
+    [
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 }
+    ],
+    [
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 }
+    ],
+    [
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": true, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 }
+    ],
+    [
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 },
+      { "walkable": false, "terrainCost": 1 }
+    ]
+  ]
+}
