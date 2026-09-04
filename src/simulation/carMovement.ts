@@ -19,6 +19,7 @@ export function createCar(
     totalNodesExplored: 0,
     replanCount: 0,
     totalReplanLatency: 0,
+    distanceTraveled: 0,
   };
 }
 
@@ -58,7 +59,7 @@ export function stepCar(
     grid[nextCell.row][nextCell.col].terrainCost;
 
   const speed = BASE_SPEED / terrainCost;
-
+  car.distanceTraveled += speed * deltaTime;
   car.elapsedTime += deltaTime;
   car.segmentProgress += speed * deltaTime;
 

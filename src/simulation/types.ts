@@ -24,4 +24,5 @@ export interface CarState {
   totalNodesExplored: number;
   replanCount: number;
   totalReplanLatency: number;
+  distanceTraveled: number;
 }
