@@ -41,3 +41,52 @@ main {
 .cell.end {
   background: #ef4444;
 }
+
+/* Race HUD */
+
+.race-hud {
+  margin-top: 16px;
+  padding: 16px;
+  background: #15181d;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  max-width: 600px;
+}
+
+.race-hud__time {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.race-hud__standings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.race-hud__row {
+  display: grid;
+  grid-template-columns: 32px 1fr 80px 90px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: #0b0d10;
+}
+
+.race-hud__position {
+  font-weight: bold;
+}
+
+.race-hud__algorithm {
+  font-weight: bold;
+}
+
+.race-hud__distance {
+  text-align: right;
+}
+
+.race-hud__status {
+  text-align: right;
+  font-size: 12px;
+}
