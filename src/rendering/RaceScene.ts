@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
-import type { Grid } from '../algorithms/types';
+import type { Grid, GridPosition } from '../algorithms/types';
 import type { RaceReplay } from '../simulation/raceRecorder';
+import { ExploredNodesOverlay } from './ExploredNodesOverlay';
 
 const CELL_SIZE = 32;
 
@@ -23,18 +24,29 @@ const ALGORITHM_COLORS: Record<string, number> = {
 export interface RaceSceneConfig {
   grid: Grid;
   replay: RaceReplay;
+  exploredByAlgorithm: Record<string, GridPosition[]>;
   onFrameUpdate?: (frameIndex: number, replay: RaceReplay) => void;
+  onSearchPhaseComplete?: () => void;
 }
 
 export class RaceScene extends Phaser.Scene {
   private grid!: Grid;
   private replay!: RaceReplay;
+  private exploredByAlgorithm!: Record<string, GridPosition[]>;
+
   private onFrameUpdate?: (
     frameIndex: number,
     replay: RaceReplay,
   ) => void;
 
+  private onSearchPhaseComplete?: () => void;
+
   private carSprites: Map<string, Phaser.GameObjects.Arc> = new Map();
+  private searchOverlays: ExploredNodesOverlay[] = [];
+
+  private searchPhaseComplete = false;
+  private searchPhaseCallbackFired = false;
+
   private playbackTime = 0;
 
   constructor() {
@@ -44,16 +56,27 @@ export class RaceScene extends Phaser.Scene {
   init(config: RaceSceneConfig) {
     this.grid = config.grid;
     this.replay = config.replay;
+    this.exploredByAlgorithm = config.exploredByAlgorithm;
     this.onFrameUpdate = config.onFrameUpdate;
+    this.onSearchPhaseComplete = config.onSearchPhaseComplete;
+
     this.playbackTime = 0;
+    this.searchPhaseComplete = false;
+    this.searchPhaseCallbackFired = false;
   }
 
   create() {
     this.drawTrack();
     this.createCars();
+    this.createSearchOverlays();
   }
 
   update(_time: number, delta: number) {
+    if (!this.searchPhaseComplete) {
+      this.updateSearchPhase(delta);
+      return;
+    }
+
     if (!this.replay.frames.length) return;
 
     this.playbackTime += delta / 1000;
@@ -115,7 +138,73 @@ export class RaceScene extends Phaser.Scene {
         color,
       );
 
+      sprite.setVisible(false);
+
       this.carSprites.set(car.algorithm, sprite);
+    }
+  }
+
+  private createSearchOverlays() {
+    for (const [algorithm, exploredOrder] of Object.entries(
+      this.exploredByAlgorithm,
+    )) {
+      if (!exploredOrder.length) continue;
+
+      const color = ALGORITHM_COLORS[algorithm] ?? 0xffffff;
+
+      const overlay = new ExploredNodesOverlay(
+        this,
+        exploredOrder,
+        color,
+      );
+
+      this.searchOverlays.push(overlay);
+    }
+
+    if (this.searchOverlays.length === 0) {
+      this.finishSearchPhase();
+    }
+  }
+
+  private updateSearchPhase(delta: number) {
+    if (!this.searchOverlays.length) {
+      this.finishSearchPhase();
+      return;
+    }
+
+    let allComplete = true;
+
+    for (const overlay of this.searchOverlays) {
+      const complete = overlay.update(delta);
+
+      if (!complete) {
+        allComplete = false;
+      }
+    }
+
+    if (allComplete) {
+      this.finishSearchPhase();
+    }
+  }
+
+  private finishSearchPhase() {
+    if (this.searchPhaseComplete) return;
+
+    this.searchPhaseComplete = true;
+
+    for (const overlay of this.searchOverlays) {
+      overlay.destroy();
+    }
+
+    this.searchOverlays = [];
+
+    for (const sprite of this.carSprites.values()) {
+      sprite.setVisible(true);
+    }
+
+    if (!this.searchPhaseCallbackFired) {
+      this.searchPhaseCallbackFired = true;
+      this.onSearchPhaseComplete?.();
     }
   }
 
