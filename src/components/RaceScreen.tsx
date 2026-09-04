@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import type { Grid, GridPosition } from '../algorithms/types';
 import type { RaceReplay } from '../simulation/raceRecorder';
 import { RaceCanvas } from './RaceCanvas';
@@ -8,29 +8,45 @@ interface RaceScreenProps {
   grid: Grid;
   replay: RaceReplay;
   exploredByAlgorithm: Record<string, GridPosition[]>;
+  onFinished: () => void;
 }
 
 export function RaceScreen({
   grid,
   replay,
   exploredByAlgorithm,
+  onFinished,
 }: RaceScreenProps) {
   const [frameIndex, setFrameIndex] = useState(0);
   const lastUpdateRef = useRef(0);
+  const finishedRef = useRef(false);
 
-  const handleFrameUpdate = (
-    nextFrameIndex: number,
-    _replay: RaceReplay,
-  ) => {
-    const now = performance.now();
+  const handleFrameUpdate = useCallback(
+    (
+      nextFrameIndex: number,
+      _replay: RaceReplay,
+    ) => {
+      if (
+        nextFrameIndex >= replay.frames.length - 1 &&
+        !finishedRef.current
+      ) {
+        finishedRef.current = true;
+        setFrameIndex(nextFrameIndex);
+        onFinished();
+        return;
+      }
 
-    if (now - lastUpdateRef.current < 100) {
-      return;
-    }
+      const now = performance.now();
 
-    lastUpdateRef.current = now;
-    setFrameIndex(nextFrameIndex);
-  };
+      if (now - lastUpdateRef.current < 100) {
+        return;
+      }
+
+      lastUpdateRef.current = now;
+      setFrameIndex(nextFrameIndex);
+    },
+    [onFinished, replay.frames.length],
+  );
 
   return (
     <main>

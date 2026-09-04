@@ -1,26 +1,65 @@
-import Track from './components/Track';
+import { useState } from 'react';
 import level1 from './tracks/level1.json';
-import { bfs } from './algorithms/bfs';
+import { LevelSelect } from './components/LevelSelect';
+import { RaceScreen } from './components/RaceScreen';
+import { ResultsScreen } from './components/ResultsScreen';
+import { setupRace } from './simulation/setupRace';
+
+type Screen = 'select' | 'race' | 'results';
 
 function App() {
-  const bfsResult = bfs(
-    level1.grid,
-    level1.start,
-    level1.end
+  const [screen, setScreen] = useState<Screen>('select');
+  const [raceSetup, setRaceSetup] = useState(() =>
+    setupRace(
+      level1.grid,
+      level1.start,
+      level1.end,
+    ),
   );
 
-  return (
-    <main>
-      <h1>F1 AI Grand Prix</h1>
-
-      <Track
-        grid={level1.grid}
-        start={level1.start}
-        end={level1.end}
-        path={bfsResult.path}
-        explored={bfsResult.exploredOrder}
+  if (screen === 'select') {
+    return (
+      <LevelSelect
+        levels={['Level 1']}
+        onSelect={() => {
+          setRaceSetup(
+            setupRace(
+              level1.grid,
+              level1.start,
+              level1.end,
+            ),
+          );
+          setScreen('race');
+        }}
       />
-    </main>
+    );
+  }
+
+  if (screen === 'race') {
+    return (
+      <RaceScreen
+        grid={level1.grid}
+        replay={raceSetup.replay}
+        exploredByAlgorithm={raceSetup.exploredByAlgorithm}
+        onFinished={() => setScreen('results')}
+      />
+    );
+  }
+
+  return (
+    <ResultsScreen
+      results={raceSetup.replay.results}
+      onRaceAgain={() => {
+        setRaceSetup(
+          setupRace(
+            level1.grid,
+            level1.start,
+            level1.end,
+          ),
+        );
+        setScreen('race');
+      }}
+    />
   );
 }
 

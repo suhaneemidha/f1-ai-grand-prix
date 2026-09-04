@@ -43,7 +43,7 @@ export function recordRace(cars: CarState[], config: RaceConfig): RaceReplay {
       time: simTime,
       cars: cars.map(c => ({
         algorithm: c.algorithm,
-        position: c.position,
+        position: { ...c.position },
         distanceTraveled: c.distanceTraveled,
         finished: c.finished,
       })),
