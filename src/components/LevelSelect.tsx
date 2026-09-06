@@ -1,5 +1,7 @@
+import type { LevelDefinition } from '../simulation/setupRace';
+
 interface LevelSelectProps {
-  levels: string[];
+  levels: LevelDefinition[];
   onSelect: (level: string) => void;
 }
 
@@ -16,10 +18,11 @@ export function LevelSelect({
       <div className="level-select">
         {levels.map((level) => (
           <button
-            key={level}
-            onClick={() => onSelect(level)}
+            key={level.id}
+            onClick={() => onSelect(level.id)}
           >
-            {level}
+            <strong>{level.name}</strong>
+            <span>{level.description}</span>
           </button>
         ))}
       </div>

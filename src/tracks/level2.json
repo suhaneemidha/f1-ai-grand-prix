@@ -1,0 +1,936 @@
+{
+  "grid": [
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      },
+      {
+        "walkable": false,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ],
+    [
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      },
+      {
+        "walkable": true,
+        "terrainCost": 1
+      }
+    ]
+  ],
+  "start": {
+    "row": 13,
+    "col": 7
+  },
+  "end": {
+    "row": 0,
+    "col": 7
+  }
+}

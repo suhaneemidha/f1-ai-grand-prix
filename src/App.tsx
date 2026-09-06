@@ -1,32 +1,39 @@
 import { useState } from 'react';
-import level1 from './tracks/level1.json';
 import { LevelSelect } from './components/LevelSelect';
 import { RaceScreen } from './components/RaceScreen';
 import { ResultsScreen } from './components/ResultsScreen';
-import { setupRace } from './simulation/setupRace';
+import { LEVELS, setupRace } from './simulation/setupRace';
 
 type Screen = 'select' | 'race' | 'results';
 
 function App() {
   const [screen, setScreen] = useState<Screen>('select');
-  const [raceSetup, setRaceSetup] = useState(() =>
-    setupRace(
-      level1.grid,
-      level1.start,
-      level1.end,
-    ),
-  );
+  const [selectedLevel, setSelectedLevel] = useState('level1');
+  const [raceSetup, setRaceSetup] = useState(() => {
+    const level = LEVELS.level1;
+
+    return setupRace(
+      level.grid,
+      level.start,
+      level.end,
+    );
+  });
+
+  const level = LEVELS[selectedLevel];
 
   if (screen === 'select') {
     return (
       <LevelSelect
-        levels={['Level 1']}
-        onSelect={() => {
+        levels={Object.values(LEVELS)}
+        onSelect={(levelId) => {
+          const selected = LEVELS[levelId];
+
+          setSelectedLevel(levelId);
           setRaceSetup(
             setupRace(
-              level1.grid,
-              level1.start,
-              level1.end,
+              selected.grid,
+              selected.start,
+              selected.end,
             ),
           );
           setScreen('race');
@@ -38,7 +45,7 @@ function App() {
   if (screen === 'race') {
     return (
       <RaceScreen
-        grid={level1.grid}
+        grid={level.grid}
         replay={raceSetup.replay}
         exploredByAlgorithm={raceSetup.exploredByAlgorithm}
         onFinished={() => setScreen('results')}
@@ -52,9 +59,9 @@ function App() {
       onRaceAgain={() => {
         setRaceSetup(
           setupRace(
-            level1.grid,
-            level1.start,
-            level1.end,
+            level.grid,
+            level.start,
+            level.end,
           ),
         );
         setScreen('race');
