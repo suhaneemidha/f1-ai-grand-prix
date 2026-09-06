@@ -60,4 +60,21 @@ function buildLevel2() {
   writeTrack('level2.json', grid, start, end);
 }
 
+function buildLevel3() {
+  const rows = 11;
+  const cols = 14;
+
+  const grid = createGrid(rows, cols);
+
+  for (let col = 6; col <= 8; col += 1) {
+    grid[5][col].terrainCost = 5;
+  }
+
+  const start = { row: 5, col: 0 };
+  const end = { row: 5, col: 13 };
+
+  writeTrack('level3.json', grid, start, end);
+}
+
 buildLevel2();
+buildLevel3();

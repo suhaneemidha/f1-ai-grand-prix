@@ -31,7 +31,6 @@ export function ucs(
 
   while (!queue.isEmpty()) {
     const current = queue.dequeue()!;
-
     const currentKey = posKey(current);
 
     if (visited.has(currentKey)) {
@@ -47,16 +46,15 @@ export function ucs(
       return {
         path,
         nodesExplored: exploredOrder.length,
-        totalCost: path.length - 1,
+        totalCost: costSoFar.get(currentKey)!,
         exploredOrder,
       };
     }
 
     for (const neighbor of getNeighbors(current, grid)) {
       const neighborKey = posKey(neighbor);
-
-      const newCost = costSoFar.get(currentKey)! + 1;
-
+      const terrainCost = grid[neighbor.row][neighbor.col].terrainCost;
+      const newCost = costSoFar.get(currentKey)! + terrainCost;
       const previousCost = costSoFar.get(neighborKey);
 
       if (previousCost === undefined || newCost < previousCost) {

@@ -10,6 +10,7 @@ import type { CarState, AlgorithmName } from './types';
 import type { RaceConfig } from './raceManager';
 import level1 from '../tracks/level1.json';
 import level2 from '../tracks/level2.json';
+import level3 from '../tracks/level3.json';
 
 export interface RaceSetup {
   cars: CarState[];
@@ -42,6 +43,14 @@ export const LEVELS: Record<string, LevelDefinition> = {
     grid: level2.grid,
     start: level2.start,
     end: level2.end,
+  },
+    level3: {
+    id: 'level3',
+    name: 'Level 3 — The Mud',
+    description: 'Terrain changes the cost — shortest is not always fastest.',
+    grid: level3.grid,
+    start: level3.start,
+    end: level3.end,
   },
 };
 
