@@ -336,73 +336,7 @@
         "terrainCost": 1
       },
       {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
         "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      }
-    ],
-    [
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
         "terrainCost": 1
       },
       {
@@ -459,72 +393,6 @@
       },
       {
         "walkable": true,
-        "terrainCost": 1
-      }
-    ],
-    [
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": true,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
-        "terrainCost": 1
-      },
-      {
-        "walkable": false,
         "terrainCost": 1
       }
     ],
@@ -926,12 +794,21 @@
     ]
   ],
   "start": {
-    "row": 13,
-    "col": 7
+    "row": 11,
+    "col": 0
   },
   "end": {
     "row": 0,
-    "col": 7
+    "col": 15
   },
-  "dynamicObstacles": []
+  "dynamicObstacles": [
+    {
+      "position": {
+        "row": 6,
+        "col": 9
+      },
+      "activeFrom": 2,
+      "activeUntil": 20
+    }
+  ]
 }

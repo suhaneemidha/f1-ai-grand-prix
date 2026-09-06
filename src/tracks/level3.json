@@ -646,5 +646,6 @@
   "end": {
     "row": 5,
     "col": 13
-  }
+  },
+  "dynamicObstacles": []
 }

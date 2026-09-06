@@ -16,6 +16,9 @@ function App() {
       level.grid,
       level.start,
       level.end,
+      {
+        dynamicObstacles: level.dynamicObstacles,
+      },
     );
   });
 
@@ -34,6 +37,9 @@ function App() {
               selected.grid,
               selected.start,
               selected.end,
+              {
+                dynamicObstacles: selected.dynamicObstacles,
+              },
             ),
           );
           setScreen('race');
@@ -62,6 +68,9 @@ function App() {
             level.grid,
             level.start,
             level.end,
+            {
+              dynamicObstacles: level.dynamicObstacles,
+            },
           ),
         );
         setScreen('race');

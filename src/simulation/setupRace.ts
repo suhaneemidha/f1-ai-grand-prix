@@ -11,6 +11,8 @@ import type { RaceConfig } from './raceManager';
 import level1 from '../tracks/level1.json';
 import level2 from '../tracks/level2.json';
 import level3 from '../tracks/level3.json';
+import level4 from '../tracks/level4.json';
+import type { DynamicObstacle } from './dynamicObstacles';
 
 export interface RaceSetup {
   cars: CarState[];
@@ -25,6 +27,7 @@ export interface LevelDefinition {
   grid: Grid;
   start: GridPosition;
   end: GridPosition;
+  dynamicObstacles?: DynamicObstacle[];
 }
 
 export const LEVELS: Record<string, LevelDefinition> = {
@@ -44,13 +47,22 @@ export const LEVELS: Record<string, LevelDefinition> = {
     start: level2.start,
     end: level2.end,
   },
-    level3: {
+  level3: {
     id: 'level3',
     name: 'Level 3 — The Mud',
     description: 'Terrain changes the cost — shortest is not always fastest.',
     grid: level3.grid,
     start: level3.start,
     end: level3.end,
+  },
+  level4: {
+    id: 'level4',
+    name: 'Level 4 — Track Closure',
+    description: 'The track changes mid-race — who adapts fastest?',
+    grid: level4.grid,
+    start: level4.start,
+    end: level4.end,
+    dynamicObstacles: level4.dynamicObstacles,
   },
 };
 

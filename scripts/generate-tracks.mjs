@@ -12,13 +12,14 @@ function createGrid(rows, cols) {
   );
 }
 
-function writeTrack(filename, grid, start, end) {
+function writeTrack(filename, grid, start, end, dynamicObstacles) {
   fs.mkdirSync(tracksDir, { recursive: true });
 
   const output = {
     grid,
     start,
     end,
+    dynamicObstacles,
   };
 
   fs.writeFileSync(
@@ -57,7 +58,7 @@ function buildLevel2() {
   const start = { row: 13, col: 7 };
   const end = { row: 0, col: 7 };
 
-  writeTrack('level2.json', grid, start, end);
+  writeTrack('level2.json', grid, start, end, []);
 }
 
 function buildLevel3() {
@@ -73,8 +74,35 @@ function buildLevel3() {
   const start = { row: 5, col: 0 };
   const end = { row: 5, col: 13 };
 
-  writeTrack('level3.json', grid, start, end);
+  writeTrack('level3.json', grid, start, end, []);
+}
+
+function buildLevel4() {
+  const rows = 12;
+  const cols = 16;
+
+  const grid = createGrid(rows, cols);
+
+  const start = { row: 11, col: 0 };
+  const end = { row: 0, col: 15 };
+
+  const dynamicObstacles = [
+    {
+      position: { row: 6, col: 9 },
+      activeFrom: 2.0,
+      activeUntil: 20.0,
+    },
+  ];
+
+  writeTrack(
+    'level4.json',
+    grid,
+    start,
+    end,
+    dynamicObstacles,
+  );
 }
 
 buildLevel2();
 buildLevel3();
+buildLevel4();
