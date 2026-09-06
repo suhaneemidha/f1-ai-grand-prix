@@ -140,3 +140,17 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+
+.level-select button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 280px;
+  text-align: left;
+}
+
+.level-select button span {
+  font-size: 14px;
+  font-weight: normal;
+}
