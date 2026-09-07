@@ -23,6 +23,16 @@ export function createCar(
   };
 }
 
+export function createCarWithSpeedProfile(
+  algorithm: AlgorithmName,
+  path: GridPosition[],
+  profile: number[],
+): CarState {
+  const car = createCar(algorithm, path);
+  car.speedProfile = profile;
+  return car;
+}
+
 export function createCarFromSearchResult(
   algorithm: AlgorithmName,
   result: SearchResult
@@ -45,7 +55,7 @@ export function gridToWorld(
 export function stepCar(
   car: CarState,
   grid: Grid,
-  deltaTime: number
+  deltaTime: number,
 ): void {
   if (car.finished || car.path.length < 2) {
     car.finished = true;
@@ -53,14 +63,18 @@ export function stepCar(
     return;
   }
 
-  const nextCell = car.path[car.pathIndex + 1];
+  let speed: number;
 
-  const terrainCost =
-    grid[nextCell.row][nextCell.col].terrainCost;
+  if (car.speedProfile) {
+    speed = car.speedProfile[car.pathIndex] ?? BASE_SPEED;
+  } else {
+    const nextCell = car.path[car.pathIndex + 1];
+    const terrainCost = grid[nextCell.row][nextCell.col].terrainCost;
+    speed = BASE_SPEED / terrainCost;
+  }
 
-  const speed = BASE_SPEED / terrainCost;
-  car.distanceTraveled += speed * deltaTime;
   car.elapsedTime += deltaTime;
+  car.distanceTraveled += speed * deltaTime;
   car.segmentProgress += speed * deltaTime;
 
   if (car.segmentProgress >= 1) {
@@ -71,17 +85,12 @@ export function stepCar(
   if (car.pathIndex >= car.path.length - 1) {
     car.finished = true;
     car.finishTime = car.elapsedTime;
-    car.position = gridToWorld(
-      car.path[car.path.length - 1]
-    );
+    car.position = gridToWorld(car.path[car.path.length - 1]);
     return;
   }
 
   const from = gridToWorld(car.path[car.pathIndex]);
-
-  const to = gridToWorld(
-    car.path[car.pathIndex + 1]
-  );
+  const to = gridToWorld(car.path[car.pathIndex + 1]);
 
   car.position = {
     x: from.x + (to.x - from.x) * car.segmentProgress,

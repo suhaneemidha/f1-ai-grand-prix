@@ -25,4 +25,5 @@ export interface CarState {
   replanCount: number;
   totalReplanLatency: number;
   distanceTraveled: number;
+  speedProfile?: number[];
 }

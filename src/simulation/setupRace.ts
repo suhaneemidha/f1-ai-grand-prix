@@ -4,7 +4,12 @@ import { dfs } from '../algorithms/dfs';
 import { ucs } from '../algorithms/ucs';
 import { greedy } from '../algorithms/greedy';
 import { astar } from '../algorithms/astar';
-import { createCarFromSearchResult } from './carMovement';
+import { racingLineHillClimbing } from '../algorithms/racingLineHillClimbing';
+import { racingLineGeneticAlgorithm } from '../algorithms/racingLineGeneticAlgorithm';
+import {
+  createCarFromSearchResult,
+  createCarWithSpeedProfile,
+} from './carMovement';
 import { recordRace } from './raceRecorder';
 import type { CarState, AlgorithmName } from './types';
 import type { RaceConfig } from './raceManager';
@@ -89,6 +94,7 @@ export function setupRace(
 
   const cars: CarState[] = [];
   const exploredByAlgorithm: Record<string, GridPosition[]> = {};
+  const searchResults: Record<string, SearchResult> = {};
 
   for (const algorithm of algorithms) {
     const result = algorithm.search(grid, start, destination);
@@ -99,7 +105,34 @@ export function setupRace(
     );
 
     cars.push(car);
+    searchResults[algorithm.name] = result;
     exploredByAlgorithm[algorithm.name] = result.exploredOrder;
+  }
+
+  if (!config.dynamicObstacles) {
+    const referencePath = searchResults.AStar.path;
+
+    const hcProfile = racingLineHillClimbing(referencePath);
+    const gaProfile = racingLineGeneticAlgorithm(referencePath);
+
+    cars.push(
+      createCarWithSpeedProfile(
+        'HillClimbing',
+        referencePath,
+        hcProfile.speeds,
+      ),
+    );
+
+    cars.push(
+      createCarWithSpeedProfile(
+        'GeneticAlgorithm',
+        referencePath,
+        gaProfile.speeds,
+      ),
+    );
+
+    exploredByAlgorithm.HillClimbing = [];
+    exploredByAlgorithm.GeneticAlgorithm = [];
   }
 
   const raceConfig: RaceConfig = {
