@@ -3,6 +3,7 @@ import type { RaceConfig, RaceResultEntry } from './raceManager';
 import { applyDynamicObstacles } from './dynamicObstacles';
 import { checkAndReplan } from './replanning';
 import { stepCar } from './carMovement';
+import { computePathCost } from '../algorithms/gridUtils';
 
 export interface CarSnapshot {
   algorithm: string;
@@ -59,6 +60,7 @@ export function recordRace(cars: CarState[], config: RaceConfig): RaceReplay {
     replanCount: c.replanCount,
     totalReplanLatency: c.totalReplanLatency,
     finished: c.finished,
+    pathCost: computePathCost(c.path, config.baseGrid),
   }));
 
   return { frames, results };

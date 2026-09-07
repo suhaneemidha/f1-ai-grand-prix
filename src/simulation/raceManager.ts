@@ -5,6 +5,7 @@ import type { DynamicObstacle } from './dynamicObstacles';
 import { stepCar } from './carMovement';
 import { applyDynamicObstacles } from './dynamicObstacles';
 import { checkAndReplan } from './replanning';
+import { computePathCost } from '../algorithms/gridUtils';
 
 export interface RaceConfig {
   baseGrid: Grid;
@@ -21,6 +22,7 @@ export interface RaceResultEntry {
   replanCount: number;
   totalReplanLatency: number;
   finished: boolean;
+  pathCost: number;
 }
 
 export function runRace(
@@ -72,5 +74,6 @@ while (
     replanCount: car.replanCount,
     totalReplanLatency: car.totalReplanLatency,
     finished: car.finished,
+    pathCost: computePathCost(car.path, config.baseGrid),
   }));
 }

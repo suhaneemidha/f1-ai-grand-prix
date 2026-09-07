@@ -99,7 +99,7 @@ main {
 
 .results__row {
   display: grid;
-  grid-template-columns: 48px 1fr 100px 120px 100px;
+  grid-template-columns: 48px minmax(180px, 1fr) 100px 120px 100px 100px;
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
@@ -118,6 +118,7 @@ main {
 
 .results__time,
 .results__nodes,
+.results_cost,
 .results__replans {
   text-align: right;
 }

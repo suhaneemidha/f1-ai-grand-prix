@@ -62,6 +62,7 @@ function App() {
   return (
     <ResultsScreen
       results={raceSetup.replay.results}
+      levelName={level.name}
       onRaceAgain={() => {
         setRaceSetup(
           setupRace(

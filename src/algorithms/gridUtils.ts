@@ -51,3 +51,16 @@ export function reconstructPath(
 
   return path;
 }
+
+export function computePathCost(
+  path: GridPosition[],
+  grid: Grid,
+): number {
+  let cost = 0;
+
+  for (let i = 1; i < path.length; i++) {
+    cost += grid[path[i].row][path[i].col].terrainCost;
+  }
+
+  return cost;
+}
