@@ -23,6 +23,7 @@ export interface RaceSetup {
   cars: CarState[];
   replay: ReturnType<typeof recordRace>;
   exploredByAlgorithm: Record<string, GridPosition[]>;
+  pathsByAlgorithm: Record<string, GridPosition[]>;
 }
 
 export interface LevelDefinition {
@@ -94,6 +95,7 @@ export function setupRace(
 
   const cars: CarState[] = [];
   const exploredByAlgorithm: Record<string, GridPosition[]> = {};
+  const pathsByAlgorithm: Record<string, GridPosition[]> = {};
   const searchResults: Record<string, SearchResult> = {};
 
   for (const algorithm of algorithms) {
@@ -107,6 +109,7 @@ export function setupRace(
     cars.push(car);
     searchResults[algorithm.name] = result;
     exploredByAlgorithm[algorithm.name] = result.exploredOrder;
+    pathsByAlgorithm[algorithm.name] = result.path;
   }
 
   if (!config.dynamicObstacles) {
@@ -133,6 +136,8 @@ export function setupRace(
 
     exploredByAlgorithm.HillClimbing = [];
     exploredByAlgorithm.GeneticAlgorithm = [];
+    pathsByAlgorithm.HillClimbing = referencePath;
+    pathsByAlgorithm.GeneticAlgorithm = referencePath;
   }
 
   const raceConfig: RaceConfig = {
@@ -147,5 +152,6 @@ export function setupRace(
     cars,
     replay,
     exploredByAlgorithm,
+    pathsByAlgorithm,
   };
 }

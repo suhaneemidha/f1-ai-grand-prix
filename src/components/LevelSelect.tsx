@@ -1,31 +1,80 @@
 import type { LevelDefinition } from '../simulation/setupRace';
+import Track from './Track';
+import { Header } from './Header';
 
 interface LevelSelectProps {
   levels: LevelDefinition[];
   onSelect: (level: string) => void;
+  onNavigate: (
+    page: 'home' | 'levels' | 'algorithms' | 'about',
+  ) => void;
 }
 
 export function LevelSelect({
   levels,
   onSelect,
+  onNavigate,
 }: LevelSelectProps) {
   return (
-    <main>
-      <h1>F1 AI Grand Prix</h1>
+    <>
+      <Header
+        active="levels"
+        onNavigate={onNavigate}
+      />
 
-      <h2>Select a Track</h2>
+      <main className="level-select-page">
+        <section className="level-select-hero">
+          <p className="level-select-hero__eyebrow">
+            F1 AI GRAND PRIX
+          </p>
 
-      <div className="level-select">
-        {levels.map((level) => (
-          <button
-            key={level.id}
-            onClick={() => onSelect(level.id)}
-          >
-            <strong>{level.name}</strong>
-            <span>{level.description}</span>
-          </button>
-        ))}
-      </div>
-    </main>
+          <h1>Choose Your Track</h1>
+
+          <p>
+            Pick a circuit and watch seven AI strategies
+            compete.
+          </p>
+        </section>
+
+        <section className="level-select">
+          {levels.map((level, index) => (
+            <article
+              className="level-card"
+              key={level.id}
+            >
+              <div className="level-card__number">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+
+              <div className="level-card__content">
+                <strong>{level.name}</strong>
+
+                <span>{level.description}</span>
+
+                <div className="level-card__track">
+                  <Track
+                    grid={level.grid}
+                    start={level.start}
+                    end={level.end}
+                    obstacles={
+                      level.dynamicObstacles?.map(
+                        (obstacle) => obstacle.position,
+                      ) ?? []
+                    }
+                  />
+                </div>
+
+                <button
+                  className="level-card__play"
+                  onClick={() => onSelect(level.id)}
+                >
+                  Play →
+                </button>
+              </div>
+            </article>
+          ))}
+        </section>
+      </main>
+    </>
   );
 }
